@@ -1,0 +1,2 @@
+# ReciQuick
+Personal Project
