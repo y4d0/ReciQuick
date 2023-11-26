@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('sitebgg.png') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #f0f0f0; /* Fallback color if the image is not available or not fully covering */
+        }
+
+        .recipe-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+        }
+
+        .recipe-card {
+            width: calc(33.33% - 40px); /* Adjusted to show 3 cards per row with some spacing */
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .recipe-card:hover {
+            transform: scale(1.05);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .recipe-card h2 {
+            margin: 10px;
+            color: #333;
+            text-align: center; /* Center the title */
+        }
+
+        .recipe-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .recipe-content {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="recipe-container">
+        <!-- Recipe 1 -->
+        <div class="recipe-card" onclick="openRecipe('reci-page1.html')">
+            <img src="Image1.png" alt="Recipe 1">
+            <h2>Dal Makhani</h2>
+        </div>
+
+        <!-- Recipe 2 -->
+        <div class="recipe-card" onclick="openRecipe('reci-page2.html')">
+            <img src="Image2.png" alt="Recipe 2">
+            <h2>Red Sauce Pasta</h2>
+        </div>
+
+        <!-- Recipe 3 -->
+        <div class="recipe-card" onclick="openRecipe('reci-page3.html')">
+            <img src="Image3.png" alt="Recipe 3">
+            <h2>Poha</h2>
+        </div>
+
+        <!-- Recipe 4 -->
+        <div class="recipe-card" onclick="openRecipe('reci-page4.html')">
+            <img src="Image4.png" alt="Recipe 4">
+            <h2>Tandoori Chicken</h2>
+        </div>
+
+        <!-- Recipe 5 -->
+        <div class="recipe-card" onclick="openRecipe('reci-page5.html')">
+            <img src="Image5.png" alt="Recipe 5">
+            <h2>Paneer Sandwich</h2>
+        </div>
+
+        <!-- Recipe 6 -->
+        <div class="recipe-card" onclick="openRecipe('reci-page6.html')">
+            <img src="Image6.png" alt="Recipe 6">
+            <h2>Chicken Seekh Kabab</h2>
+        </div>
+
+    </div>
+
+    <!-- Recipe Page Container -->
+    <div class="recipe-page" id="recipePageContainer">
+        <div class="recipe-content">
+            <span class="close-button" onclick="closeRecipe()">×</span>
+            <div id="recipePageContent"></div>
+        </div>
+    </div>
+
+<script>
+      function openRecipe(recipeUrl) {
+            // Redirect to the recipe page
+            window.location.href = recipeUrl;
+        }
+
+        function closeRecipe() {
+            document.getElementById('recipePageContainer').style.display = 'none';
+        }
+</script>
+
+</body>
+</html>
